@@ -6,21 +6,21 @@ public class Ex1part1 {
         String s = sc.nextLine();
         int sum = 0;
         int currentNumber = 0;
-        boolean isBuildingNumber = false;
+        boolean isNumber = false;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (Character.isDigit(c)) {
                 currentNumber = currentNumber * 10 + (c - '0');
-                isBuildingNumber = true;
+                isNumber = true;
             } else {
-                if (isBuildingNumber) {
+                if (isNumber) {
                     sum += currentNumber;
                     currentNumber = 0;
-                    isBuildingNumber = false;
+                    isNumber = false;
                 }
             }
         }
-        if (isBuildingNumber) {
+        if (isNumber) {
             sum += currentNumber;
         }
 
